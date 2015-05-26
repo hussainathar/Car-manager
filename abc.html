@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+			<title>Car Manager</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">			
+			<link rel="stylesheet" type="text/css" href="css/style.css">
+			
+			<!-- LOAD BOOTSTRAP CSS -->
+			<!--[if IE]>
+ 				 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+			<!--[if IE]>
+				<script src="https://goo.gl/r57ze"></script>
+			<![endif]-->
+			<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<script src="http://code.highcharts.com/highcharts.js"></script>
+			<script src="http://code.highcharts.com/modules/exporting.js"></script>
+			<script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+			<script src="https://rawgit.com/pablojim/highcharts-ng/master/dist/highcharts-ng.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> 
+			<script type="text/javascript" src="ngStorage.min.js"></script>			
+			<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	</head>
+
+
+	<body ng-app="carApp" style="background-color: rgb(230, 233, 249);" >
+
+
+			<div class="container-fluid">
+
+				<div class="container-fluid">
+					<div>
+						<img class="img-responsive img-rounded" src="image/111.jpg"
+							alt="Head img" width="100%"></img>
+					</div>
+					<nav class="navbar navbar-inverse" ng-init="tab=1">
+
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse"
+									data-target="#myNavbar" ng-click="custom=!custom">
+									<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" ng-click="tab=1" href="#">Car Manager</a>
+							</div>
+							<div class="collapse navbar-collapse" id="myNavbar" ng-hide="custom" >
+								<ul class="nav navbar-nav">
+									<li ng-class="{active: tab==1}"><a ng-click="tab=1" href="#Home">Home</a></li>
+									<li ng-class="{active: tab==2}"><a ng-click="tab=2"  href="#Phases">Phases</a></li>
+									<li ng-class="{active: tab==3}"><a ng-click="tab=3"  href="#ShowDetails">Show Details</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				
+				</div>
+
+				<div class="container-fluid">
+					<div ng-view id="myapp">
+					</div>
+				</div>
+
+
+				<div class="col-sm-12" style="background-color: rgb(34, 34, 34);">
+					<p align="center" style="color: #D0D8CC; padding-top: 10px;">@copyright</p>
+				</div>
+			</div>
+
+		<script src="application.js"></script>
+		<script src="controller/homeController.js"></script>
+		<script src="controller/carPhaseController.js"></script>
+		<script src="controller/showCarController.js"></script>
+		
+	</body>
+</html>

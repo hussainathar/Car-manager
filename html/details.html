@@ -1,0 +1,138 @@
+<div ng-init="initPhase()">
+  <div class="col-sm-3 container-fluid" id="ab">
+
+
+    <div>
+
+      <table class="table table-hover" id="ol1" style="align:center">
+        <tbody>
+        
+        <tr ng-class="{active: tab==1}" ng-click="tab=1" ><td><button ng-class="{active: tab==1}" class="btn btn-success btn-block " ng-disabled="ph1" ng-click="phs1()" align="left" id="ph1">Phase 1</button></td>
+        </tr><tr ng-class="{active: tab==2}" ng-click="tab=2" ><td><button  ng-class="{active: tab==2}" class="btn btn-success btn-block" ng-disabled="ph2" ng-click="phs2()" align="left" id="ph2">Phase 2</button></td></tr>
+        <tr ng-class="{active: tab==3}" ng-click="tab=3"><td><button class="btn btn-success btn-block" ng-disabled="ph3" ng-click="phs3()" align="left" id="ph33">Phase 3</button></td></tr>
+        <tr ng-class="{active: tab==4}" ng-click="tab=4"><td><button class="btn btn-success btn-block" ng-disabled="ph4" ng-click="phs4()" align="left" id="ph44">Phase 4</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+      
+  </div>
+  <div class="col-sm-8 container-fluid well" id="abc">
+      
+      <div class="row custom_row_main " id="list" ng-show="tv1">
+        <div class="col-sm-4" ng-click="tab=2" align="right">
+          <b><p>Select Car: </p></b>
+            </div>
+       
+             <select class="btn btn-success col-sm-4 ng-valid ng-dirty"  ng-model="carselected" ng-change="changeValue(carselected)">
+                      
+                       <option  ng-repeat="car in cars" value="{{car.count}}">{{car.name}}</option>
+                     <!-- <option  ng-repeat="allCar in allCars">{{allCar.name1}}</option>  -->
+
+                     </select>
+         
+      </div>
+     <div class="row custom_row_main" id="list" ng-show ="phase1" >
+      <div >
+      
+        <form class="form"   method = "post" style="width:90%">
+          <div class="well" align="center"><h3><b>Phase 1 Details </b></h3></div>
+          <div class="well">
+          
+          <table class="table table-hover" >
+            <tr>
+            <td><b>Name: </b>
+            </td>
+            <td><b>{{name}}</b>
+            </td>
+            </tr>
+            <tr>
+            <td><b>Model: </b>
+            </td>
+            <td><b>{{model}}</b>
+            </td>
+            </tr>
+
+          </table>
+          </div>
+        </form>
+      </div>
+    </div>  
+    <div class="row custom_row_main" id="list" ng-show ="phase2">
+    
+       <div >
+      
+   <form class="form"   method = "post" style="width:90%">
+          <div class="well" align="center"><h3><b>Phase 2 Details </b></h3></div>
+          <div class="well">
+           
+              <table class="table table-hover" >
+            <tr>
+            <td><b>Description: </b>
+            </td>
+            <td><b>{{desc}}</b>
+            </td>
+            </tr>
+            <tr>
+            <td><b>Image: </b>
+            </td>
+            <td>&nbsp;
+            </td>
+            </tr>
+            <tr>
+            <td colspan="2"> <img ng-src="{{src}}" class="thumb3"/>
+            </td>
+            
+            </tr>
+          </table>
+
+          </div>
+        
+        </form>
+        
+      </div>
+    </div>  
+    <div class="row custom_row_main" id="list" ng-show ="phase3">
+   
+       <div >
+      
+        <form class="form"   method = "post" style="width:90%">
+          <div class="well" align="center"><h3><b>Phase 3 Details </b></h3></div>
+          <div class="well">
+          <table class="table" >
+            <tr>
+              <td><b>Mileage: </b>
+              </td>
+              <td><b>{{mileage}}</b>
+              </td>
+            </tr>
+            <tr>
+              <td><b>No of Seats: </b>
+              </td>
+              <td><b>{{seat}}</b>
+              </td>
+            </tr>
+            <tr>
+              <td><b>Price: </b>
+              </td>
+              <td><b>{{price}}</b>
+              </td>
+            </tr>
+          </table>
+         
+          </div>
+          
+        </form>
+      </div>
+    </div>
+    <div class="row custom_row_main" id="list" ng-show ="phase4">
+      <div>
+        <form class="form"   method = "post" style="width:90%">
+          <div class="well" align="center"><h3><b>Phase 4 Details </b></h3></div>
+          <div class="well">
+           <highchart id="chart1" config="highchartsNG"></highchart>
+          </div>
+          </form>
+      </div>
+    </div>  
+  </div>  
+</div>

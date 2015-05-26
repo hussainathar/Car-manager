@@ -1,0 +1,97 @@
+<div ng-init="initPhase()">
+	<div class="col-sm-3 container-fluid" id="ab">
+		<div>
+			<table class="table table-hover" id="ol1" style="align:center">
+				<tbody>
+				<tr ng-class="{active: tab==1}" ng-click="tab=1" ><td><button ng-class="{active: tab==1}" class="btn btn-success btn-block " ng-disabled="ph1" ng-click="phs1()" align="left" id="ph1">Phase 1</button></td>
+				</tr><tr ng-class="{active: tab==2}" ng-click="tab=2" ><td><button  ng-class="{active: tab==2}" class="btn btn-success btn-block" ng-disabled="ph2" ng-click="phs2()" align="left" id="ph2">Phase 2</button></td></tr>
+				<tr ng-class="{active: tab==3}" ng-click="tab=3"><td><button class="btn btn-success btn-block" ng-disabled="ph3" ng-click="phs3()" align="left" id="ph3">Phase 3</button></td></tr>
+				<tr ng-class="{active: tab==4}" ng-click="tab=4"><td><button class="btn btn-success btn-block" ng-disabled="ph4" ng-click="phs4()" align="left" id="ph4">Phase 4</button></td></tr>
+				</tbody>
+			</table>
+		</div>
+			
+	</div>
+	<div class="col-sm-8 container-fluid well" id="abc">
+		 <div class="row custom_row_main" id="list" ng-show ="phase1">
+			<div>
+				<form class="form"   method = "post" style="width:90%">
+					<h3>Add Car Details Phase 1</h3>
+					<label>Name: <span>*</span></label>
+					<input class="inpu" type="text" placeholder="Car name" ng-model="name" ng-readonly="1==1"></input>
+					<label>Model: <span>*</span></label>
+					<input class="inpu" type="text" id="model" ng-model="model"  placeholder="Model Name" ></input>
+					<br></br>
+					<div align="center">
+						<div class="col-sm-4" ng-click="tab=2">
+						</div>
+
+						<button   class="btn btn-success col-sm-4" ng-click="savePhase1()" ng-disabled="!name||!model" value="Save">Save</button>
+						
+					</div>
+				</form>
+			</div>
+		</div>	
+		<div class="row custom_row_main" id="list" ng-show ="phase2">
+			<div>
+				<form class="form" name="myform"   method = "post" style="width:90%">
+					<h3>Add Car Details Phase 2</h3>
+					<label>Description:</label>
+					<textarea id="desc" class="ng-dirty ng-valid ng-valid-required" placeholder="Description..." ng-model="desc" ></textarea>
+					<br>
+					<label>Car Image:</label>
+	 				<input type="file"  id="files" required></input>
+					
+					<div aligh="center">
+						<div class="col-sm-4" ng-click="tab=3">
+						</div>
+
+						<button   class="btn btn-success col-sm-4" ng-click="savePhase2()"  ng-disabled="!desc" value="Save">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>	
+		<div class="row custom_row_main" id="list" ng-show ="phase3">
+			<div>
+				<form class="form"    method = "post" style="width:90%">
+					<h3>Add Car Details Phase 3</h3>
+					<label>Mileage: <span>*</span></label>
+					<input class="inpu" type="text" id="mileage" placeholder="Mileage" ng-model="mileage" ></input>
+					<label>No of seats: <span>*</span></label>
+					<input class="inpu" type="text" id="seats" ng-model="seats" placeholder="No of seats" ></input>
+					<label>Price: <span>*</span></label>
+					<input class="inpu" type="text" id="price" ng-model="price" placeholder="Price" ></input>
+					<br></br>
+					<div aligh="center">
+						<div class="col-sm-4" ng-click="tab=4">
+						</div>
+
+						<button   class="btn btn-success col-sm-4" ng-click="savePhase3()" ng-disabled="!mileage||!seats||!price" value="Save">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row custom_row_main" id="list" ng-show ="phase4">
+			<div>
+				<form class="form"  method = "post" style="width:90%">
+					<h3>Car Sales Details Phase 4</h3>
+					<label>January : <span>*</span></label>
+					<input class="inpu" type="text" id="jan" ng-model="jan" placeholder="January Sales" ></input>
+					<label>February: <span>*</span></label>
+					<input class="inpu" type="text" id="feb"  ng-model="feb" placeholder="February Sales" ></input>
+					<label>March: <span>*</span></label>
+					<input class="inpu" type="text" id="mar" ng-model="mar" placeholder="March Sales" ></input>
+					<label>April: <span>*</span></label>
+					<input class="inpu" type="text" id="apr"  ng-model="apr" placeholder="April Sales" ></input>
+					<br></br>
+					<div aligh="center">
+						<div class="col-sm-4">
+						</div>
+
+						<button   class="btn btn-success col-sm-4" ng-click="savePhase4()" ng-disabled="!jan||!feb||!mar||!apr"  value="Save">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>	
+	</div>	
+</div>

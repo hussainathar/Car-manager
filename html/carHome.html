@@ -1,0 +1,70 @@
+<div class="col-sm-3 container-fluid" id="ab"   ng-init="myInit()">
+															
+	<form name="personForm" ng-submit="processForm()">
+		<div class="input-group">
+			<input type="text" class="form-control" ng-click="resetForm()" placeholder="Add new car.." id="newcar" ng-model="name"></input>
+						
+			<div class="input-group-btn">
+				<button type="submit" id="add" class="btn btn-success" ng-disabled="!name">
+					<span class="glyphicon">Add</span>
+				</button>
+			</div>
+		</div>	
+							
+	</form>	
+	<p style="color:red; margin:5px">{{data}}</p>
+	<table class="table table-hover" id="ol1" align="center">
+
+		<tr ng-repeat="car in cars">
+							
+       		<td align="left">{{car.name}}</td>
+       		<td align="right"><a href="#Phases"> <button id="{{car.count}}" class="btn btn-success"  ng-click="phaseForm($event)">Phase {{car.phase}}</button></a> </td>
+       						
+     	</tr>
+	</table>	
+</div>
+
+<div class="col-sm-6 container-fluid well" id="abc" >
+	
+		<div class="thumb2 well" id="content" ng-repeat="car in cars">
+			<b><p>{{car.name}}</p></b>
+          	<img ng-src="{{car.src}}" class="thumb" ng-mouseover="show(1)" ng-mouseleave="show(0)" />
+          	<div id="text" ng-show ="v==1">
+
+         		 Name:{{car.name}}<br/>
+         		 Milage:{{car.mileage}}</br>
+         		 Model:{{car.model}}
+
+          	</div>
+        </div>
+</div>
+
+<div class="col-sm-3 container-fluid" id="abcd" >
+
+	<form ng-submit="searchCar(srchcar)">
+		<div class="input-group">
+			<input type="text" id="srchcar" class="form-control" placeholder="Seach a Car.." ng-change="changeValue()" ng-model="srchcar"></input>
+			<div class="input-group-btn">
+				<button type="submit" id="search" class="btn btn-success" ng-disabled="!srchcar">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</div>
+		</div>
+	</form>
+	<p style="color:red; margin:5px">{{data2}}</p>
+	<div id="carresult">
+	<table id="content2" ng-hide="value">
+       <tr id="trow"  ng-repeat="car in cars | filter:searchFilter">
+       <br><td>
+       <img ng-src="{{car.src}}" class="thumb"  />
+          <div id="text" >
+
+          Name:{{car.name}}<br/>
+          Milage:{{car.mileage}}</br>
+          Model:{{car.model}}</div>
+        </td>
+       </tr>
+       </table>
+
+	</div>
+</div>
